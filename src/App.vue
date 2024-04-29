@@ -1,5 +1,5 @@
 <template>
-    <SignaturePdf />
+  <SignaturePdf />
 </template>
 
 <script setup>
