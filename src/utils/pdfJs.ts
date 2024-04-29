@@ -7,8 +7,11 @@ window.pdfjsWorker = pdfjsWorker;
 export async function printPDF(file: File): Promise<string | void> {
   const Base64Prefix = 'data:application/pdf;base64,';
   const pdf = await readfile(file);
-  if (typeof pdf !== 'string') return;
-
+  if (typeof pdf !== 'string') {
+    console.log("pdf",pdf);
+    return;
+  };
+  console.log
   return window.atob(pdf.slice(Base64Prefix.length));
 }
 

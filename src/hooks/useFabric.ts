@@ -24,7 +24,11 @@ export default function useFabric(id: string) {
 
   async function drawPDF(file: File) {
     const PDFBase64 = await printPDF(file);
-    if (!PDFBase64) return;
+    console.log("base64",PDFBase64);
+    if (!PDFBase64){
+      console.log("where is the base64");
+      return;
+    };
     const { setCurrentPDF } = usePdfStore();
     const now = Date.now();
     const PDFId = `${file.name}${now}`;
@@ -134,7 +138,7 @@ export default function useFabric(id: string) {
       scaleX: 0.7,
       scaleY: 0.7,
       cornerSize: 8,
-      selectionBackgroundColor: 'rgba(245, 245, 245, 0.8)',
+      selectionBackgroundColor: 'rgba(245, 245, 245, 0)',
     });
 
     canvas.add(textFabric);

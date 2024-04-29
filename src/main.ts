@@ -9,7 +9,7 @@ import App from '@/App.vue';
 import router from '@/router';
 import i18NPlugin from '@/plugins/i18n';
 import idbPlugin from '@/plugins/idb';
-
+import ViewerPlugin from './ViewerPlugin';
 const app = createApp(App);
 const pinia = createPinia();
 
@@ -18,4 +18,5 @@ app.use(pinia);
 app.use(router);
 app.use(idbPlugin);
 app.use(i18NPlugin);
+app.use(ViewerPlugin);
 app.mount('#app');
